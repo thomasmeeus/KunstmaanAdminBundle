@@ -1354,6 +1354,20 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
+// Edit pagepart modal added 032014 by Indri
+.modal--edit {
+    max-height: 80%;
+    overflow: auto;
+    .modal-body{
+        max-height: 100%;
+    }
+    .input_prop {
+        input, textarea, .input_media {
+            width: 90%;
+        }
+    }
+}
+
 //search
 .search_wrp{
     margin-bottom: 20px;
