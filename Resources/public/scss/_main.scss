@@ -1306,7 +1306,6 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
-
 .content_modal{
     top: -100%!important;
     height: 90%;
@@ -1356,6 +1355,8 @@ h1, h2, h3, h4, h5, h6{
 
 // Edit pagepart modal added 032014 by Indri
 .modal--edit {
+    width:75%;
+    margin-left:-35%;
     max-height: 80%;
     overflow: auto;
     .modal-body{
