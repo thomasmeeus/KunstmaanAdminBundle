@@ -1,0 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+
+<!-- FOR DEV -->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+{% javascripts
+    '@KunstmaanAdminBundle/Resources/public/dev-js/cupcake/navigation/jquery.navigation.js'
+%}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+<script>
+    $(function() {
+        cupcake.navigation.init();
+    });
+</script>

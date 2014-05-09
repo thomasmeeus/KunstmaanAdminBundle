@@ -12,14 +12,10 @@
 
     <title>{% block title %}{{ websitetitle | trans }}{% endblock %}</title>
 
-    <!-- favicons -->
     {% include 'KunstmaanAdminBundle:Default:_favicons.html.twig' %}
-
-    <!-- css -->
     {% include 'KunstmaanAdminBundle:Default:_css.html.twig' %}
-
-    <!-- js -->
     {% include 'KunstmaanAdminBundle:Default:_js_header.html.twig' %}
+
 </head>
 <body {% block extraparamsinbody %}{% endblock %}>
 {% block body %}
@@ -28,14 +24,19 @@
         {% include 'KunstmaanAdminBundle:Default:appwarnings.html.twig' %}
     {% endblock %}
 
-
-    {% block mainheader %}
+    {% block mainnavigation %}
         {% include 'KunstmaanAdminBundle:Default:mainheader.html.twig' %}
     {% endblock %}
 
-    <main role="main">
-        {% include "KunstmaanAdminBundle:Default:sidebar.html.twig" %}
-        {% block content %}{% endblock %}
+    <main role="main" class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                {% include "KunstmaanAdminBundle:Default:sidebar.html.twig" %}
+            </div>
+            <div class="col-md-9">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
     </main>
 
     {% block mainfooter %}

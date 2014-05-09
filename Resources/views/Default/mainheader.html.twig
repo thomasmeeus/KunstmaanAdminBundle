@@ -1,46 +1,76 @@
-<header role="banner">
-    <div class="navbar navbar-inverse navbar-fixed-top" data-dropdown="dropdown">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ websitetitle | trans }}</a>
-                <nav>
-                    <ul class="nav">
-                        {% for menuitem in adminmenu.topchildren %}
-                        {% set topchildren = menuitem.topchildren %}
-                        {% if topchildren | length > 0 %}
-                        <li class="dropdown {% if menuitem.active %} active {% endif %} {% if loop.first %} first {% endif %} {% if loop.last %} last {% endif %}">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<header role="banner" class="container-fluid main-header">
+    <div class="row">
+        <div class="col-md-3">
+            <!-- Brand -->
+            <a href="{{ path('KunstmaanAdminBundle_homepage') }}">
+                {{ websitetitle | trans }}
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="js-navigation-space-hook col-md-9 navigation-container">
+            <nav role="navigation" class="js-navigation navigation navigation--big">
+
+                <!-- Navigation - Mobile toggle -->
+                <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
+                    Menu
+                    <i class="icon-reorder"></i>
+                    <i class="icon-remove"></i>
+                </div>
+
+                <!-- Navigation - Level -->
+                <ul class="js-main-navigation-level navigation__level">
+                    {% for menuitem in adminmenu.topchildren %}
+                    {% set topchildren = menuitem.topchildren %}
+                    {% if topchildren | length > 0 %}
+                        <!-- Navigation - Item with sub-items -->
+                        <li class="navigation__item {% if menuitem.active %}navigation__item--active{% endif %}">
+                            <a href="#" class="navigation__link">
                                 {{ menuitem.internalname | trans }}
-                                <b class="caret"></b>
                             </a>
-                            <ul class="dropdown-menu">
+
+                            <!-- Navigation - Sublevel toggle -->
+                            <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
+                                <i class="icon-chevron-down"></i>
+                                <i class="icon-chevron-up"></i>
+                            </div>
+
+                            <ul class="navigation__level navigation__level--sublevel">
                                 {% for topchild in topchildren %}
-                                <li class="{% if topchild.active %} active {% endif %} {% if loop.first %} first {% endif %} {% if loop.last %} last {% endif %}">
-                                    <a href="{{ path(topchild.route, topchild.routeparams) }}">{{ topchild.internalname | trans }}</a>
+                                <li class="navigation__item navigation__item--sublevel {% if topchild.active %}navigation__item--active{% endif %}">
+                                    <a href="{{ path(topchild.route, topchild.routeparams) }}" class="navigation__link navigation__link--sublevel">
+                                        {{ topchild.internalname | trans }}
+                                    </a>
                                 </li>
                                 {% endfor %}
                             </ul>
                         </li>
-                        {% else %}
-                        <li class="{% if menuitem.active %} active {% endif %} {% if loop.first %} first {% endif %} {% if loop.last %} last {% endif %}">
-                            <a href="{{ path(menuitem.route, menuitem.routeparams) }}">{{ menuitem.internalname | trans }}</a>
+                    {% else %}
+                        <!-- Navigation - Item without sub-items -->
+                        <li class="navigation__item {% if menuitem.active %}navigation__item--active{% endif %}">
+                            <a href="{{ path(menuitem.route, menuitem.routeparams) }}" class="navigation__link">
+                                {{ menuitem.internalname | trans }}
+                            </a>
                         </li>
-                        {% endif %}
-                        {% endfor %}
-                    </ul>
-                    <ul class="nav pull-right">
-                        {% set route = app.request.attributes.get('_route') %}
-                        {% set attribs = app.request.attributes.all %}
-                        {{ localeswitcher_widget(requiredlocales, route) }}
-                        <li>
-                            <a href="{{ path('KunstmaanAdminBundle_user_change_password', { 'id':app.user.id }) }}">{{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+                    {% endif %}
+                    {% endfor %}
+
+                    <!-- Navigation - Items right -->
+                    {% set route = app.request.attributes.get('_route') %}
+                    {% set attribs = app.request.attributes.all %}
+                    {#{{ localeswitcher_widget(requiredlocales, route) }}#}
+                    <li class="navigation__item">
+                        <a href="{{ path('KunstmaanAdminBundle_user_change_password', { 'id':app.user.id }) }}" class="navigation__link">
+                            {{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="{{ path('fos_user_security_logout') }}" class="navigation__link">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </header>
