@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Main Scaffolding of the App
+   ========================================================================== */
+
+/* App
+   ========================================================================== */
+.app {
+    background: $blue-ultralight;
+}
+
+
+/* App Header
+   ========================================================================== */
+.app__header {
+    background: $black;
+}
+
+.app__header__brand {
+    display: block;
+
+    background: $green;
+    font-size: 1.5em;
+    line-height: $navigation-height;
+    color: $white;
+}
+
+.app__header__brand__link {
+    color: inherit;
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+
+/* App Sidebar
+   ========================================================================== */
+.app__sidebar {
+
+}
+
+
+/* App Content
+   ========================================================================== */
+.app__content {
+    background: $white;
+    border: 1px solid $gray-light;
+    border-top: none;
+    border-right: none;
+}
+
+
+/* App Footer
+   ========================================================================== */
+.app__footer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
