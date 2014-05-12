@@ -3,11 +3,12 @@
    ========================================================================== */
 
 .navigation {
+    float: left;
+    width: 100%;
 
-}
-
-.navigation--small {
-    overflow: hidden;
+    @media (min-width: $screen-md) {
+        border-left: 1px solid $green;
+    }
 }
 
 .navigation__level--sublevel {
@@ -17,4 +18,16 @@
 
 .navigation__item--right {
     float: right;
+}
+
+
+.navigation--small {
+    overflow: hidden;
+    .navigation__item__text-small-only {
+        display: inline-block;
+    }
+}
+
+.navigation__item__text-small-only {
+    display: none;
 }

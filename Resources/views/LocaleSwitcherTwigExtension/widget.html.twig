@@ -2,7 +2,7 @@
 {% set route_params = app.request.attributes.get('_route_params') %}
 {% set route_params = route_params|merge(app.request.query.all) %}
     <!-- Navigation - Item with sub-items -->
-    <li class="navigation__item navigation__item--right">
+    <li class="navigation__item navigation__item--right text--upper">
         <a href="#language" class="navigation__link">
             {{ app.request.attributes.get('_locale') }}
         </a>

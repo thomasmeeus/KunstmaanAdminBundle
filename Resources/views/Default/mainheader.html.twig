@@ -13,14 +13,14 @@
 
                 <!-- Navigation - Mobile toggle -->
                 <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
-                    Menu
-                    <i class="fa fa--bars navigation__toggle__open-icon"></i>
-                    <i class="fa fa--times navigation__toggle__close-icon"></i>
+                    <i class="fa fa--bars fa--big navigation__toggle__open-icon"></i>
+                    <i class="fa fa--times fa--big navigation__toggle__close-icon"></i>
                 </div>
 
                 <!-- Navigation - Level -->
                 <ul class="js-main-navigation-level navigation__level">
                     {% for menuitem in adminmenu.topchildren %}
+                    {% if menuitem.internalname != 'Settings' %}
                     {% set topchildren = menuitem.topchildren %}
                     {% if topchildren | length > 0 %}
                         <!-- Navigation - Item with sub-items -->
@@ -53,6 +53,7 @@
                             </a>
                         </li>
                     {% endif %}
+                    {% endif %}
                     {% endfor %}
 
                     <!-- Navigation - Items right -->
@@ -60,13 +61,14 @@
                     {% set attribs = app.request.attributes.all %}
                     <li class="navigation__item navigation__item--right">
                         <a href="{{ path('fos_user_security_logout') }}" class="navigation__link">
-                            <i class="fa fa--sign-out"></i>
+                            <i class="fa fa--big fa--sign-out"></i>
+                            <span class="navigation__item__text-small-only">Logout</span>
                         </a>
                     </li>
                     <li class="navigation__item navigation__item--right">
-                        <a href="{{ path('KunstmaanAdminBundle_user_change_password', { 'id':app.user.id }) }}" class="navigation__link">
-                            {#{{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}#}
-                            <i class="fa fa--cog"></i> {{ app.user.username }}
+                        <a href="{{ path('KunstmaanAdminBundle_settings', { 'id':app.user.id }) }}" class="navigation__link">
+                            <i class="fa fa--big fa--cog"></i>
+                            <span class="navigation__item__text-small-only">Settings</span>
                         </a>
                     </li>
                     {{ localeswitcher_widget(requiredlocales, route) }}

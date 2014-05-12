@@ -44,9 +44,12 @@
    ========================================================================== */
 .app__content {
     background: $white;
-    border: 1px solid $gray-light;
-    border-top: none;
-    border-right: none;
+
+    @media (min-width: $screen-md) {
+        border: 1px solid $gray-light;
+        border-top: none;
+        border-right: none;
+    }
 }
 
 
