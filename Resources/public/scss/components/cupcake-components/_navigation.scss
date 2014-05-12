@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Cupcake Navigation adjustments
+   ========================================================================== */
+
+.navigation {
+
+}
+
+.navigation--small {
+    overflow: hidden;
+}
+
+.navigation__level--sublevel {
+    left: auto;
+    top: 100%;
+}
+
+.navigation__item--right {
+    float: right;
+}

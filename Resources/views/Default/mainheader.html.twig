@@ -1,21 +1,21 @@
 <header role="banner" class="container-fluid main-header">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-lg-2 main-header__brand">
             <!-- Brand -->
-            <a href="{{ path('KunstmaanAdminBundle_homepage') }}">
+            <a href="{{ path('KunstmaanAdminBundle_homepage') }}" class="link--block main-header__brand__link">
                 {{ websitetitle | trans }}
             </a>
         </div>
 
         <!-- Navigation -->
-        <div class="js-navigation-space-hook col-md-9 navigation-container">
+        <div class="js-navigation-space-hook col-md-9 col-lg-10 col--no-gutter navigation-container">
             <nav role="navigation" class="js-navigation navigation navigation--big">
 
                 <!-- Navigation - Mobile toggle -->
                 <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
                     Menu
-                    <i class="icon-reorder"></i>
-                    <i class="icon-remove"></i>
+                    <i class="fa fa--bars navigation__toggle__open-icon"></i>
+                    <i class="fa fa--times navigation__toggle__close-icon"></i>
                 </div>
 
                 <!-- Navigation - Level -->
@@ -30,9 +30,9 @@
                             </a>
 
                             <!-- Navigation - Sublevel toggle -->
-                            <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
-                                <i class="icon-chevron-down"></i>
-                                <i class="icon-chevron-up"></i>
+                            <div class="js-navigation__toggle navigation__toggle navigation__toggle--sublevel">
+                                <i class="fa fa--chevron-down navigation__toggle__sublevel-open-icon"></i>
+                                <i class="fa fa--chevron-up navigation__toggle__sublevel-close-icon"></i>
                             </div>
 
                             <ul class="navigation__level navigation__level--sublevel">
@@ -59,14 +59,14 @@
                     {% set route = app.request.attributes.get('_route') %}
                     {% set attribs = app.request.attributes.all %}
                     {#{{ localeswitcher_widget(requiredlocales, route) }}#}
-                    <li class="navigation__item">
-                        <a href="{{ path('KunstmaanAdminBundle_user_change_password', { 'id':app.user.id }) }}" class="navigation__link">
-                            {{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}
+                    <li class="navigation__item navigation__item--right">
+                        <a href="{{ path('fos_user_security_logout') }}" class="navigation__link">
+                            <i class="fa fa--sign-out"></i>
                         </a>
                     </li>
-                    <li class="navigation__item">
-                        <a href="{{ path('fos_user_security_logout') }}" class="navigation__link">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    <li class="navigation__item navigation__item--right">
+                        <a href="{{ path('KunstmaanAdminBundle_user_change_password', { 'id':app.user.id }) }}" class="navigation__link">
+                            {{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}
                         </a>
                     </li>
                 </ul>

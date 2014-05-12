@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Main Header
+   ========================================================================== */
+
+.main-header {
+    background: $black;
+}
+
+.main-header__brand {
+    display: block;
+
+    background: $green;
+    font-size: 1.5em;
+    line-height: $navigation-height;
+    color: $white;
+}
+
+.main-header__brand__link {
+    color: inherit;
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+}

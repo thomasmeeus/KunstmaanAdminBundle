@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Components
+
+   Never add styles directly to this file - set up imports
+   ========================================================================== */
+
+
+/* Bootstrap components
+   ========================================================================== */
+@import "bootstrap-components/breadcrumbs",
+        "bootstrap-components/grid",
+        "bootstrap-components/pagination";
+
+
+/* Cupcake components
+   ========================================================================== */
+@import "cupcake-components/navigation";
+
+
+/* Typography
+   ========================================================================== */
+@import "typography/headers",
+        "typography/text",
+        "typography/links",
+        "typography/lists",
+        "typography/iconfont";
+
+
+/* General components
+   ========================================================================== */
+@import "general-components/main-header",
+        "general-components/main-footer";

@@ -29,11 +29,11 @@
     {% endblock %}
 
     <main role="main" class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
+        <div class="row row--padded-large">
+            <div class="col-md-3 col-lg-2">
                 {% include "KunstmaanAdminBundle:Default:sidebar.html.twig" %}
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 col-lg-10">
                 {% block content %}{% endblock %}
             </div>
         </div>

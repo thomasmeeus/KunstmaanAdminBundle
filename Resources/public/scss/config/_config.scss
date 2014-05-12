@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Config
+
+   This file is exclusively intended for setting up imports
+   Never add styles directly to this file
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+@import "general-config/bourbon",
+        "general-config/paths",
+        "general-config/colors",
+        "general-config/iconfont";
+
+
+/* Bootstrap
+   ========================================================================== */
+@import "bootstrap-config/bootstrap-vars",
+        "bootstrap-config/bootstrap-imports";
+
+
+/* Cupcake
+   ========================================================================== */
+@import "cupcake-config/cupcake-vars",
+        "cupcake-config/components-config/navigation",
+        "cupcake-config/cupcake-imports";
