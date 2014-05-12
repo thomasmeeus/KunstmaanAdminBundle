@@ -1,18 +1,25 @@
 {% if locales|length > 1 %}
-    {% set route_params = app.request.attributes.get('_route_params') %}
-    {% set route_params = route_params|merge(app.request.query.all) %}
+{% set route_params = app.request.attributes.get('_route_params') %}
+{% set route_params = route_params|merge(app.request.query.all) %}
+    <!-- Navigation - Item with sub-items -->
+    <li class="navigation__item navigation__item--right">
+        <a href="#language" class="navigation__link">
+            {{ app.request.attributes.get('_locale') }}
+        </a>
 
-    <li class="dropdown language">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#language">
-    	{{ app.request.attributes.get('_locale') }}
-    	<b class="caret"></b>
-    </a>
-	<ul class="dropdown-menu">
-		{% for locale in locales %}
-		<li {% if app.request.attributes.get('_locale') == locale %}class="active"{% endif %}>
-			<a href="{{ path(route,  route_params | merge({'_locale': locale})) }}">{{ locale }}</a>
-		</li>
-		{% endfor %}
-	</ul>
-</li>
+        <!-- Navigation - Sublevel toggle -->
+        <div class="js-navigation__toggle navigation__toggle navigation__toggle--sublevel">
+            <i class="fa fa--chevron-down navigation__toggle__sublevel-open-icon"></i>
+            <i class="fa fa--chevron-up navigation__toggle__sublevel-close-icon"></i>
+        </div>
+        <ul class="navigation__level navigation__level--sublevel">
+            {% for locale in locales %}
+            <li class="navigation__item navigation__item--sublevel {% if app.request.attributes.get('_locale') == locale %}navigation__item--active{% endif %}">
+                <a href="{{ path(route,  route_params | merge({'_locale': locale})) }}" class="navigation__link navigation__link--sublevel">
+                    {{ locale }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
 {% endif %}

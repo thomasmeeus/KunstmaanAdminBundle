@@ -58,7 +58,6 @@
                     <!-- Navigation - Items right -->
                     {% set route = app.request.attributes.get('_route') %}
                     {% set attribs = app.request.attributes.all %}
-                    {#{{ localeswitcher_widget(requiredlocales, route) }}#}
                     <li class="navigation__item navigation__item--right">
                         <a href="{{ path('fos_user_security_logout') }}" class="navigation__link">
                             <i class="fa fa--sign-out"></i>
@@ -66,9 +65,11 @@
                     </li>
                     <li class="navigation__item navigation__item--right">
                         <a href="{{ path('KunstmaanAdminBundle_user_change_password', { 'id':app.user.id }) }}" class="navigation__link">
-                            {{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}
+                            {#{{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}#}
+                            <i class="fa fa--cog"></i> {{ app.user.username }}
                         </a>
                     </li>
+                    {{ localeswitcher_widget(requiredlocales, route) }}
                 </ul>
             </nav>
         </div>
