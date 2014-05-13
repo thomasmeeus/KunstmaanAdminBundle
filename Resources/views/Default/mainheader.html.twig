@@ -12,10 +12,10 @@
             <nav role="navigation" class="js-navigation navigation navigation--app__header navigation--big">
 
                 <!-- Navigation - Mobile toggle -->
-                <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
+                <button class="js-navigation__toggle navigation__toggle navigation__toggle--top">
                     <i class="fa fa--bars fa--big navigation__toggle__open-icon"></i>
                     <i class="fa fa--times fa--big navigation__toggle__close-icon"></i>
-                </div>
+                </button>
 
                 <!-- Navigation - Level -->
                 <ul class="js-main-navigation-level navigation__level">
@@ -28,10 +28,10 @@
                             <a href="#" class="js-navigation__toggle navigation__link">
                                 {{ menuitem.internalname | trans }}
                                 <!-- Navigation - Sublevel toggle -->
-                                <div class="navigation__toggle navigation__toggle--sublevel">
+                                <button class="btn--reset navigation__toggle navigation__toggle--sublevel">
                                     <i class="fa fa--chevron-down navigation__toggle__sublevel-open-icon"></i>
                                     <i class="fa fa--chevron-up navigation__toggle__sublevel-close-icon"></i>
-                                </div>
+                                </button>
                             </a>
                             <ul class="navigation__level navigation__level--sublevel">
                                 {% for topchild in topchildren %}

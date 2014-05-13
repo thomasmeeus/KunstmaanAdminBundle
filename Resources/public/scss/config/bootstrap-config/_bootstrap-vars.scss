@@ -24,10 +24,10 @@ $brand-danger:          #d9534f;
 //** Background color for `<body>`.
 $body-bg:               #fff;
 //** Global text color on `<body>`.
-$text-color:            $gray-dark;
+$text-color:            $black;
 
 //** Global textual link color.
-$link-color:            $brand-primary;
+$link-color:            $blue;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%);
 
@@ -138,9 +138,9 @@ $table-border-color:            #ddd;
 
 $btn-font-weight:                normal;
 
-$btn-default-color:              #333;
-$btn-default-bg:                 #fff;
-$btn-default-border:             #ccc;
+$btn-default-color:              $black;
+$btn-default-bg:                 $white;
+$btn-default-border:             $gray-light;
 
 $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;
@@ -177,7 +177,7 @@ $input-bg-disabled:              $gray-lighter;
 //** Text color for `<input>`s
 $input-color:                    $gray;
 //** `<input>` border color
-$input-border:                   #ccc;
+$input-border:                   $gray-light;
 //** `<input>` border radius
 $input-border-radius:            $border-radius-base;
 //** Border color for inputs on focus
