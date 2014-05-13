@@ -2,29 +2,15 @@
    Cupcake Navigation adjustments
    ========================================================================== */
 
-.navigation {
-    float: left;
-    width: 100%;
-
-    @media (min-width: $screen-md) {
-        border-left: 1px solid $green;
-    }
-}
-
-.navigation__level--sublevel {
-    left: auto;
-    top: 100%;
-}
-
-.navigation__toggle--sublevel {
-    border: none;
-}
-
+/* General adj
+   ========================================================================== */
 .navigation__item--right {
     float: right;
 }
 
 
+/* Navigation small adj
+   ========================================================================== */
 .navigation--small {
     overflow: hidden;
     .navigation__item__text-small-only {
@@ -34,4 +20,55 @@
 
 .navigation__item__text-small-only {
     display: none;
+}
+
+
+/* Navigation in App Header
+   ========================================================================== */
+.navigation--app__header {
+    float: left;
+    width: 100%;
+
+    @media (min-width: $screen-md) {
+        border-left: 1px solid $green;
+    }
+
+    .navigation__level--sublevel {
+        left: auto;
+        top: 100%;
+    }
+
+    .navigation__toggle--sublevel {
+        border: none;
+    }
+}
+
+
+/* Navigation in App Sidebar
+   ========================================================================== */
+.navigation--app__sidebar {
+    border-left: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+
+    .navigation__link {
+        color: $black;
+        border-color: $gray-light;
+        &:hover {
+            background: $gray-lighter;
+        }
+    }
+    .navigation__toggle--sublevel {
+        border: 1px solid $gray-light;
+        border-bottom: none;
+        background: $blue-ultralight;
+        &:hover {
+            background: $gray-lighter;
+        }
+    }
+    > .navigation__level {
+        height: auto;
+    }
+    .navigation__item--sublevel {
+        background: none;
+    }
 }

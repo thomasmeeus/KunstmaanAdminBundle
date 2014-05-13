@@ -30,12 +30,20 @@
 
     <main role="main" class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-lg-2 col--padded-large app__sidebar">
-                {% include "KunstmaanAdminBundle:Default:sidebar.html.twig" %}
-            </div>
-            <div class="col-md-9 col-lg-10 col--padded-large app__content">
-                {% block content %}{% endblock %}
-            </div>
+            {% set lowestTopChild = adminmenu.lowestTopChild %}
+            {% if lowestTopChild %}
+                {% set navigationChildren = lowestTopChild.navigationChildren %}
+            {% endif %}
+            {% if lowestTopChild and navigationChildren | length > 0 %}
+                <aside class="col-md-3 col-lg-2 col--padded-large app__sidebar">
+                    {% include "KunstmaanAdminBundle:Default:sidebar.html.twig" %}
+                </aside>
+                <div class="col-md-9 col-lg-10 col--padded-large app__content">
+            {% else %}
+                <div class="col-md-12 col--padded-large app__content">
+            {% endif %}
+                    {% block content %}{% endblock %}
+                </div>
         </div>
     </main>
 
