@@ -1,11 +1,8 @@
 {% javascripts
     '@KunstmaanAdminBundle/vendor/frontend/jquery/dist/jquery.min.js'
     '@KunstmaanAdminBundle/vendor/frontend/cupcake/js/navigation/jquery.navigation.js'
+    '@KunstmaanAdminBundle/Resources/public/js/_sidebartoggle.js'
+    '@KunstmaanAdminBundle/Resources/public/js/app.js'
 %}
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
-<script>
-    $(function() {
-        cupcake.navigation.init();
-    });
-</script>
