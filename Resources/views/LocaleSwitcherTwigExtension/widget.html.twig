@@ -3,15 +3,16 @@
 {% set route_params = route_params|merge(app.request.query.all) %}
     <!-- Navigation - Item with sub-items -->
     <li class="navigation__item navigation__item--right text--upper">
-        <a href="#language" class="navigation__link">
+        <a href="#language" class="js-navigation__toggle navigation__link">
             {{ app.request.attributes.get('_locale') }}
+            <!-- Navigation - Sublevel toggle -->
+            <div class="navigation__toggle navigation__toggle--sublevel">
+                <i class="fa fa--chevron-down navigation__toggle__sublevel-open-icon"></i>
+                <i class="fa fa--chevron-up navigation__toggle__sublevel-close-icon"></i>
+            </div>
         </a>
 
-        <!-- Navigation - Sublevel toggle -->
-        <div class="js-navigation__toggle navigation__toggle navigation__toggle--sublevel">
-            <i class="fa fa--chevron-down navigation__toggle__sublevel-open-icon"></i>
-            <i class="fa fa--chevron-up navigation__toggle__sublevel-close-icon"></i>
-        </div>
+
         <ul class="navigation__level navigation__level--sublevel">
             {% for locale in locales %}
             <li class="navigation__item navigation__item--sublevel {% if app.request.attributes.get('_locale') == locale %}navigation__item--active{% endif %}">
