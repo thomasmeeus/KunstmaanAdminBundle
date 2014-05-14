@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* ==========================================================================
-   Stylesheet for all browsers
+   Kunstmaan AdminBundle Styles
 
    Never add styles directly to this file - set up imports
    Style guide: https://github.com/necolas/idiomatic-css
@@ -12,13 +12,11 @@
 @import "config/config";
 
 
-/* Website Theme
+/* Helpers
    ========================================================================== */
-/* helpers */
 @import "helpers/helpers";
 
-/* general */
-@import "general/general";
 
-/* components */
+/* Components
+   ========================================================================== */
 @import "components/components";

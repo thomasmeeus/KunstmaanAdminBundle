@@ -1,6 +1,66 @@
 {% extends 'KunstmaanAdminBundle:Default:layout.html.twig' %}
 
 {% block body %}
+    <!-- App Header -->
+    <header role="banner" class="container-fluid app__header">
+        <div class="row">
+            <div class="col-md-3 col-lg-2 app__header__brand">
+                <!-- Brand -->
+                <a href="{{ path('KunstmaanAdminBundle_homepage') }}" class="link--block app__header__brand__link">
+                    {{ websitetitle | trans }}
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Main -->
+    <main role="main" class="container-fluid app__main">
+        <div class="row">
+            <!-- App Login -->
+            <div class="col-md-6 col-md-offset-3 col--padded-large">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                     <div class="alert alert-warning">
+                        <strong>
+                            {{ 'form.warning' | trans }}:
+                        </strong>
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </div>
+                {% endif %}
+
+                {% for key, messages in app.session.flashbag.all() %}
+                    <div class="alert alert-info {{ key }}">
+                        {% for message in messages %}
+                            {{ message|trans({}, 'FOSUserBundle') }}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+                {% block fos_user_content %}{% endblock fos_user_content %}
+
+                {% block forgot_password_link %}
+                    {% if 'resetting' not in app.request.pathInfo and 'profile' not in app.request.pathInfo %}
+                        <p>
+                            <a href="{{ path('fos_user_resetting_request') }}" class="forgot_password fadeInDownPw">
+                                {{ 'Forgot my password.' | trans }}
+                            </a>
+                        </p>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+
+    <!-- App Footer -->
+    {% block mainfooter %}
+        {% include 'KunstmaanAdminBundle:Default:mainfooter.html.twig' %}
+    {% endblock %}
+{% endblock %}
+
+{#
+{% block body %}
     <header>
         <div class="navbar navbar-fixed-top" data-dropdown="dropdown">
             <div class="navbar-inner">
@@ -45,3 +105,4 @@
         </div>
      </div>
 {% endblock %}
+#}
