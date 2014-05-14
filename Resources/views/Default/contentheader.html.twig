@@ -1,0 +1,8 @@
+<header role="banner" class="page-header">
+    {% if adminmenu.current %}
+    <h1>
+        {{ adminmenu.current.internalname | trans }} {% block page_header_addition %}{% endblock %}
+    </h1>
+    {% endif %}
+    {% block extra_actions_header %}{% endblock %}
+</header>

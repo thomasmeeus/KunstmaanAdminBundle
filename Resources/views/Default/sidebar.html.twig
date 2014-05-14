@@ -13,7 +13,7 @@
 <!-- Tree -->
 {% set currentMenuItem = adminmenu.current %}
 <nav role="navigation" class="navigation navigation--small navigation--app__sidebar">
-    <ul class="js-main-navigation-level navigation__level">
+    <ul class="navigation__level">
         {% if lowestTopChild.appearInSidebar %}
             <li class="navigation__item {% if lowestTopChild.internalname == currentMenuItem.internalname %}active{% endif %}" {% if lowestTopChild.role %} rel="{{lowestTopChild.role}}" {% endif %}>
                 <a href="{{ path(lowestTopChild.route, lowestTopChild.routeparams) }}" class="navigation__link">

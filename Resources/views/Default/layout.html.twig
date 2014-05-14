@@ -20,14 +20,17 @@
 <body {% block extraparamsinbody %}{% endblock %} class="app">
 {% block body %}
 
+    <!-- App Warnings -->
     {% block appwarnings %}
         {% include 'KunstmaanAdminBundle:Default:appwarnings.html.twig' %}
     {% endblock %}
 
+    <!-- App Header -->
     {% block mainnavigation %}
         {% include 'KunstmaanAdminBundle:Default:mainheader.html.twig' %}
     {% endblock %}
 
+    <!-- App Main -->
     <main role="main" id="app__main" class="container-fluid app__main">
         <div class="row">
             {% set lowestTopChild = adminmenu.lowestTopChild %}
@@ -35,16 +38,42 @@
                 {% set navigationChildren = lowestTopChild.navigationChildren %}
             {% endif %}
             {% if lowestTopChild and navigationChildren | length > 0 %}
+                <!-- App Sidebar -->
                 <aside id="app__sidebar" class="col-md-3 col--padded-large app__sidebar">
                     {% include "KunstmaanAdminBundle:Default:sidebar.html.twig" %}
                 </aside>
+                <!-- App Content -->
                 <div id="app__content" class="col-md-9 col--padded-large app__content">
+                    <!-- App Sidebar Toggle -->
                     <button type="button" id="app__sidebar-toggle" class="btn--reset app__sidebar-toggle">
-                        <i class="fa fa--list-ul"></i>
+                        <span class="app__sidebar-toggle__show-icon">
+                            <i class="fa fa--caret-right"></i>
+                            <i class="fa fa--list-ul"></i>
+                        </span>
+                        <span class="app__sidebar-toggle__hide-icon">
+                            <i class="fa fa--caret-left"></i>
+                            <i class="fa fa--list-ul"></i>
+                        </span>
                     </button>
             {% else %}
+                <!-- App Content -->
                 <div id="app__content" class="col-md-12 col--padded-large app__content">
             {% endif %}
+                    <!-- App Content - Breadcrumbs -->
+                    {% block breadcrumb %}
+                        {% include "KunstmaanAdminBundle:Default:breadcrumbs.html.twig" %}
+                    {% endblock %}
+                    <!-- App Content - Flash Messages -->
+                    {% block flashmessages %}
+                        {% include "KunstmaanAdminBundle:Default:flashmessages.html.twig" %}
+                    {% endblock %}
+                    <!-- App Content - General Messages -->
+                    {% block messages %}{% endblock %}
+                    <!-- App Content - Header -->
+                    {% block contentheader %}
+                        {% include "KunstmaanAdminBundle:Default:contentheader.html.twig" %}
+                    {% endblock %}
+                    <!-- App Content - Content -->
                     {% block content %}{% endblock %}
                 </div>
         </div>

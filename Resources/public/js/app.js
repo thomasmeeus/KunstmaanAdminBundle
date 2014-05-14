@@ -1,12 +1,12 @@
-var adminbundle = adminbundle || {};
+var kunstmaanbundles = kunstmaanbundles || {};
 
-adminbundle.app = (function($, window, undefined) {
+kunstmaanbundles.app = (function($, window, undefined) {
 
     var init;
 
     init = function() {
         cupcake.navigation.init();
-        adminbundle.sidebartoggle.init();
+        kunstmaanbundles.sidebartoggle.init();
     };
 
     return {
@@ -16,5 +16,5 @@ adminbundle.app = (function($, window, undefined) {
 }(jQuery, window));
 
 $(function() {
-    adminbundle.app.init();
+    kunstmaanbundles.app.init();
 });

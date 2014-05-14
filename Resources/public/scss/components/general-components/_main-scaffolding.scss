@@ -58,6 +58,26 @@
         @media (min-width: $screen-md) {
             margin-left: 0;
             @extend .col-md-12;
+
+            @include transition-property (width, margin);
+            @include transition-duration(.3s);
+            @include transition-timing-function(ease);
+        }
+    }
+
+    .app__sidebar-toggle__hide-icon {
+        display: inline-block;
+    }
+    .app__sidebar-toggle__show-icon {
+        display: none;
+    }
+
+    @media (min-width: $screen-md) {
+        .app__sidebar-toggle__hide-icon {
+            display: none;
+        }
+        .app__sidebar-toggle__show-icon {
+            display: inline-block;
         }
     }
 }
@@ -104,12 +124,7 @@
 
     @media (min-width: $screen-md) {
         border-left-color: $gray-light;
-
         @extend .col-md-offset-3;
-
-        @include transition-property (width, margin);
-        @include transition-duration(.3s);
-        @include transition-timing-function(ease);
     }
 }
 
@@ -120,6 +135,26 @@
     position: absolute;
     top: 1em;
     left: 1em;
+    &:hover {
+        color: $green;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.app__sidebar-toggle__hide-icon {
+    display: none;
+    @media (min-width: $screen-md) {
+        display: inline-block;
+    }
+}
+
+.app__sidebar-toggle__show-icon {
+    display: inline-block;
+    @media (min-width: $screen-md) {
+        display: none;
+    }
 }
 
 

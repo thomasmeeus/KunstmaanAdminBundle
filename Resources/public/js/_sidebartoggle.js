@@ -1,6 +1,6 @@
-var adminbundle = adminbundle || {};
+var kunstmaanbundles = kunstmaanbundles || {};
 
-adminbundle.sidebartoggle = (function(window, undefined) {
+kunstmaanbundles.sidebartoggle = (function(window, undefined) {
 
     var init,
         toggle;
@@ -13,9 +13,11 @@ adminbundle.sidebartoggle = (function(window, undefined) {
         var appMain = document.getElementById('app__main'),
             toggleButton = document.getElementById('app__sidebar-toggle');
 
-        toggleButton.addEventListener('click', function() {
-            appMain.classList.toggle('app__main--altered-state');
-        }, false);
+        if(typeof toggleButton !== 'undefined' && toggleButton !== null) {
+            toggleButton.addEventListener('click', function() {
+                appMain.classList.toggle('app__main--altered-state');
+            }, false);
+        }
     };
 
     return {
