@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 vendor/*
+Resources/public/vendor/*
 composer.lock
 composer.phar
 node_modules
