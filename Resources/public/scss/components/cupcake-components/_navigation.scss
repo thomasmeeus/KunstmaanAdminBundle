@@ -51,33 +51,3 @@
         border: none;
     }
 }
-
-
-/* Navigation in App Sidebar
-   ========================================================================== */
-.navigation--app__sidebar {
-    border-left: 1px solid $gray-light;
-    border-bottom: 1px solid $gray-light;
-
-    .navigation__link {
-        color: $black;
-        border-color: $gray-light;
-        &:hover {
-            background: $gray-lighter;
-        }
-    }
-    .navigation__toggle--sublevel {
-        border: 1px solid $gray-light;
-        border-bottom: none;
-        background: $blue-ultralight;
-        &:hover {
-            background: $gray-lighter;
-        }
-    }
-    > .navigation__level {
-        height: auto;
-    }
-    .navigation__item--sublevel {
-        background: none;
-    }
-}

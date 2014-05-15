@@ -120,7 +120,7 @@ function init_tree() {
                 //Page
                 "page" : {
                     "icon" : {
-                        "image" : $.jstree._themes + "OMNext/d.png",
+                        "image" : $jstree._themes + "OMNext/d.png",
                         "position" : "-57px -57px"
                     }
                 },

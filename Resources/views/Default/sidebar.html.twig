@@ -12,18 +12,14 @@
 
 <!-- Tree -->
 {% set currentMenuItem = adminmenu.current %}
-<nav role="navigation" class="navigation navigation--small navigation--app__sidebar">
-    <ul class="navigation__level">
+<nav role="navigation" id="app__sidebar__navigation" class="app__sidebar__navigation">
+    <ul>
         {% if lowestTopChild.appearInSidebar %}
-            <li class="navigation__item {% if lowestTopChild.internalname == currentMenuItem.internalname %}active{% endif %}" {% if lowestTopChild.role %} rel="{{lowestTopChild.role}}" {% endif %}>
-                <a href="{{ path(lowestTopChild.route, lowestTopChild.routeparams) }}" class="navigation__link">
+            <li data-jstree="'opened':true" class="jstree-open {% if lowestTopChild.internalname == currentMenuItem.internalname %}active{% endif %}" {% if lowestTopChild.role %} rel="{{lowestTopChild.role}}" {% endif %}>
+                <a href="{{ path(lowestTopChild.route, lowestTopChild.routeparams) }}">
                     {{ lowestTopChild.internalname | trans }}
                 </a>
-                <button class="js-navigation__toggle btn--reset navigation__toggle navigation__toggle--sublevel">
-                    <i class="fa fa--chevron-down navigation__toggle__sublevel-open-icon"></i>
-                    <i class="fa fa--chevron-up navigation__toggle__sublevel-close-icon"></i>
-                </button>
-                <ul class="navigation__level navigation__level--sublevel">
+                <ul>
         {% endif %}
         {% for menuitem in navigationChildren %}
             {% include 'KunstmaanAdminBundle:Default:rectreeview.html.twig' %}
