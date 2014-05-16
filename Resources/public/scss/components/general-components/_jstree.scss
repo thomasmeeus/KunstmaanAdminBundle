@@ -91,7 +91,7 @@
     background-image: url("/bundles/kunstmaanadmin/vendor/jstree/dist/themes/default/32px.png");
 }
 .jstree-node {
-    background-position: -292px -4px;
+    background-position: -292px -2px;
     background-repeat: repeat-y;
 }
 .jstree-last {
@@ -113,13 +113,13 @@
     cursor: default;
 }
 .jstree-open > .jstree-ocl {
-    background-position: -132px -4px;
+    background-position: -132px -2px;
 }
 .jstree-closed > .jstree-ocl {
-    background-position: -100px -4px;
+    background-position: -100px -2px;
 }
 .jstree-leaf > .jstree-ocl {
-    background-position: -68px -4px;
+    background-position: -68px -2px;
 }
 
 // Ajax loader
@@ -149,8 +149,7 @@
 /* Search
    ========================================================================== */
 .jstree-search {
-    font-style: italic;
-    color: #8b0000;
+    color: $blue;
     font-weight: bold;
 }
 

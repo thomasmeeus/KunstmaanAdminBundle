@@ -101,16 +101,23 @@
         width: 30em;
     }
 }
+.app__sidebar--tree-ready {
+    .app__sidebar__navigation, .app__sidebar__search {
+        @include transition(opacity .3s ease);
+        opacity: 1;
+    }
+}
 
 .app__sidebar__navigation {
     width: 100%;
     overflow: auto;
     opacity: 0;
 }
-.app__sidebar__navigation--ready {
-    @include transition(opacity .3s ease);
-    opacity: 1;
+
+.app__sidebar__search {
+    opacity: 0;
 }
+
 
 /* App Content
    ========================================================================== */

@@ -7,7 +7,7 @@ kunstmaanbundles.app = (function($, window, undefined) {
     init = function() {
         cupcake.navigation.init();
         kunstmaanbundles.sidebartoggle.init();
-        kunstmaanbundles.jstree.init();
+        kunstmaanbundles.sidebartree.init();
     };
 
     return {
