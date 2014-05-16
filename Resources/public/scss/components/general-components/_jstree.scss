@@ -1,5 +1,7 @@
 /* ==========================================================================
-   JsTree - Custom theme for v3.0
+   JsTree
+
+   Custom theme for jsTree v3.0
    ========================================================================== */
 
 /* General
@@ -27,11 +29,11 @@
 /* Node
    ========================================================================== */
 .jstree-node {
-    min-width: 24px;
-    min-height: 24px;
-    margin-left: 24px;
+    min-width: 2em;
+    min-height: 2em;
+    margin-left: 2em;
 
-    line-height: 24px;
+    line-height: 2em;
     white-space: nowrap;
 }
 
@@ -40,204 +42,49 @@
    ========================================================================== */
 .jstree-anchor {
     display: inline-block;
-    color: black;
-    white-space: nowrap;
-    padding: 0 4px 0 1px;
+    padding: 0 .4em 0 0;
     margin: 0;
+    height: 2em;
+
+    line-height: 2em;
+    color: $black;
+    text-decoration: none;
     vertical-align: top;
+    white-space: nowrap;
+
+    @include transition(background-color .15s ease);
+
     &:focus {
         outline: 0;
     }
-    &, &:link, &:visited, &:hover, &:active {
+    &:hover {
         text-decoration: none;
-        color: inherit;
+        color: $black;
+    }
+}
+.jstree-anchor--active {
+    &, &:hover {
+        color: $blue;
     }
 }
 
 
 /* Icon
    ========================================================================== */
+// General
 .jstree-icon {
     &, &:empty {
         display: inline-block;
         margin: 0;
         padding: 0;
+        width: 2em;
+        height: 2em;
 
-        vertical-align: top;
+        line-height: 2em;
         text-align: center;
         text-decoration: none;
+        vertical-align: top;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.jstree-ocl {
-    cursor: pointer;
-}
-.jstree-leaf > .jstree-ocl {
-    cursor: default;
-}
-.jstree .jstree-open > .jstree-children {
-    display: block;
-}
-.jstree .jstree-closed > .jstree-children,
-.jstree .jstree-leaf > .jstree-children {
-    display: none;
-}
-.jstree-anchor > .jstree-themeicon {
-    margin-right: 2px;
-}
-.jstree-no-icons .jstree-themeicon,
-.jstree-anchor > .jstree-themeicon-hidden {
-    display: none;
-}
-.jstree-wholerow-ul {
-    position: relative;
-    display: inline-block;
-    min-width: 100%;
-}
-.jstree-wholerow-ul .jstree-leaf > .jstree-ocl {
-    cursor: pointer;
-}
-.jstree-wholerow-ul .jstree-anchor,
-.jstree-wholerow-ul .jstree-icon {
-    position: relative;
-}
-.jstree-wholerow-ul .jstree-wholerow {
-    width: 100%;
-    cursor: pointer;
-    position: absolute;
-    left: 0;
-    user-select: none;
-}
-
-
-#jstree-marker {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    border-right: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid;
-    width: 0;
-    height: 0;
-    font-size: 0;
-    line-height: 0;
-}
-
-.jstree-node,
-.jstree-icon {
-    background-repeat: no-repeat;
-    background-color: transparent;
-}
-.jstree-anchor,
-.jstree-wholerow {
-    transition: background-color 0.15s, box-shadow 0.15s;
-}
-.jstree-hovered {
-    background: #e7f4f9;
-    border-radius: 2px;
-    box-shadow: inset 0 0 1px #ccc;
-}
-.jstree-clicked {
-    background: #beebff;
-    border-radius: 2px;
-    box-shadow: inset 0 0 1px #999;
-}
-.jstree-no-icons .jstree-anchor > .jstree-themeicon {
-    display: none;
-}
-.jstree-disabled {
-    background: transparent;
-    color: #666;
-}
-.jstree-disabled.jstree-hovered {
-    background: transparent;
-    box-shadow: none;
-}
-.jstree-disabled.jstree-clicked {
-    background: #efefef;
-}
-.jstree-disabled > .jstree-icon {
-    opacity: 0.8;
-}
-.jstree-search {
-    font-style: italic;
-    color: #8b0000;
-    font-weight: bold;
-}
-.jstree-no-checkboxes .jstree-checkbox {
-    display: none !important;
-}
-.jstree-checkbox-no-clicked .jstree-clicked {
-    background: transparent;
-    box-shadow: none;
-}
-.jstree-checkbox-no-clicked .jstree-clicked.jstree-hovered {
-    background: #e7f4f9;
-}
-.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked {
-    background: transparent;
-}
-.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked.jstree-wholerow-hovered {
-    background: #e7f4f9;
-}
-
-.jstree-striped {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAMAAAB/qqA+AAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMNAMM9s3UAAAAXSURBVHjajcEBAQAAAIKg/H/aCQZ70AUBjAATb6YPDgAAAABJRU5ErkJggg==") left top repeat;
-}
-.jstree-wholerow-ul .jstree-hovered,
-.jstree-wholerow-ul .jstree-clicked {
-    background: transparent;
-    box-shadow: none;
-    border-radius: 0;
-}
-.jstree-wholerow {
-    box-sizing: border-box;
-}
-.jstree-wholerow-hovered {
-    background: #e7f4f9;
-}
-.jstree-wholerow-clicked {
-    background: #beebff;
-    background: -moz-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #beebff), color-stop(100%, #a8e4ff));
-    background: -webkit-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
-    background: -o-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
-    background: -ms-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
-    background: linear-gradient(to bottom, #beebff 0%, #a8e4ff 100%);
-}
-.jstree-anchor {
-    line-height: 24px;
-    height: 24px;
-}
-.jstree-icon {
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-}
-.jstree-icon:empty {
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-}
-.jstree-wholerow {
-    height: 24px;
 }
 .jstree-node,
 .jstree-icon {
@@ -250,6 +97,21 @@
 .jstree-last {
     background: transparent;
 }
+
+// Custom icons
+.jstree-themeicon-custom {
+    background-color: transparent;
+    background-image: none;
+    background-position: 0 0;
+}
+
+// Open/Close icons
+.jstree-ocl {
+    cursor: pointer;
+}
+.jstree-leaf > .jstree-ocl {
+    cursor: default;
+}
 .jstree-open > .jstree-ocl {
     background-position: -132px -4px;
 }
@@ -259,63 +121,37 @@
 .jstree-leaf > .jstree-ocl {
     background-position: -68px -4px;
 }
-.jstree-themeicon {
-    background-position: -260px -4px;
-}
-.jstree-no-dots .jstree-node,
-.jstree-no-dots .jstree-leaf > .jstree-ocl {
-    background: transparent;
-}
-.jstree-no-dots .jstree-open > .jstree-ocl {
-    background-position: -36px -4px;
-}
-.jstree-no-dots .jstree-closed > .jstree-ocl {
-    background-position: -4px -4px;
-}
-.jstree-disabled {
-    background: transparent;
-}
-.jstree-disabled.jstree-hovered {
-    background: transparent;
-}
-.jstree-disabled.jstree-clicked {
-    background: #efefef;
-}
-.jstree-checkbox {
-    background-position: -164px -4px;
-}
-.jstree-checkbox:hover {
-    background-position: -164px -36px;
-}
-.jstree-clicked > .jstree-checkbox {
-    background-position: -228px -4px;
-}
-.jstree-clicked > .jstree-checkbox:hover {
-    background-position: -228px -36px;
-}
-.jstree-anchor > .jstree-undetermined {
-    background-position: -196px -4px;
-}
-.jstree-anchor > .jstree-undetermined:hover {
-    background-position: -196px -36px;
-}
-.jstree-striped {
-    background-size: auto 48px;
-}
 
-.jstree-themeicon-custom {
-    background-color: transparent;
-    background-image: none;
-    background-position: 0 0;
-}
-> .jstree-container-ul .jstree-loading > .jstree-ocl {
+// Ajax loader
+.jstree-container-ul .jstree-loading > .jstree-ocl {
     background: url("/bundles/kunstmaanadmin/vendor/jstree/dist/themes/default/throbber.gif") center center no-repeat;
 }
-.jstree-file {
-    background: url("/bundles/kunstmaanadmin/vendor/jstree/dist/themes/default/32px.png") -100px -68px no-repeat;
+
+
+/* Open/Close Tree
+   ========================================================================== */
+.jstree .jstree-open > .jstree-children {
+    display: block;
 }
-.jstree-folder {
-    background: url("/bundles/kunstmaanadmin/vendor/jstree/dist/themes/default/32px.png") -260px -4px no-repeat;
+.jstree .jstree-closed > .jstree-children,
+.jstree .jstree-leaf > .jstree-children {
+    display: none;
+}
+
+
+/* States
+   ========================================================================== */
+.jstree-hovered {
+    background: darken($blue-ultralight, 2%);
+}
+
+
+/* Search
+   ========================================================================== */
+.jstree-search {
+    font-style: italic;
+    color: #8b0000;
+    font-weight: bold;
 }
 
 
@@ -336,9 +172,7 @@
     }
 
     .jstree-ok, .jstree-er {
-        background-image: url("/bundles/kunstmaanadmin/vendor/jstree/dist/themes/default/32px.png");
-        background-repeat: no-repeat;
-        background-color: transparent;
+        background: url("/bundles/kunstmaanadmin/vendor/jstree/dist/themes/default/32px.png") no-repeat;
     }
     .jstree-ok {
         background-position: -9px -71px;
@@ -350,7 +184,6 @@
         margin: 0 2px 0 2px;
     }
 }
-
 #jstree-dndi {
     background: transparent;
     width: 16px;
@@ -358,8 +191,160 @@
 }
 
 
-/* Removed styling from default theme
+/* Removed styling from default theme (not needed)
    ========================================================================== */
+//.jstree-themeicon {
+//    background-position: -260px -4px;
+//}
+//.jstree-striped {
+//    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAMAAAB/qqA+AAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMNAMM9s3UAAAAXSURBVHjajcEBAQAAAIKg/H/aCQZ70AUBjAATb6YPDgAAAABJRU5ErkJggg==") left top repeat;
+//}
+//.jstree-disabled {
+//    background: transparent;
+//    color: #666;
+//}
+//.jstree-disabled.jstree-hovered {
+//    background: transparent;
+//    box-shadow: none;
+//}
+//.jstree-disabled.jstree-clicked {
+//    background: #efefef;
+//}
+//.jstree-disabled > .jstree-icon {
+//    opacity: 0.8;
+//}
+//.jstree-file {
+//    background: url("/bundles/kunstmaanadmin/vendor/jstree/dist/themes/default/32px.png") -100px -68px no-repeat;
+//}
+//.jstree-folder {
+//    background: url("/bundles/kunstmaanadmin/vendor/jstree/dist/themes/default/32px.png") -260px -4px no-repeat;
+//}
+//.jstree-no-dots .jstree-node,
+//.jstree-no-dots .jstree-leaf > .jstree-ocl {
+//    background: transparent;
+//}
+//.jstree-no-dots .jstree-open > .jstree-ocl {
+//    background-position: -36px -4px;
+//}
+//.jstree-no-dots .jstree-closed > .jstree-ocl {
+//    background-position: -4px -4px;
+//}
+//.jstree-disabled {
+//    background: transparent;
+//}
+//.jstree-disabled.jstree-hovered {
+//    background: transparent;
+//}
+//.jstree-disabled.jstree-clicked {
+//    background: #efefef;
+//}
+//.jstree-no-checkboxes .jstree-checkbox {
+//    display: none !important;
+//}
+//.jstree-checkbox-no-clicked .jstree-clicked {
+//    background: transparent;
+//    box-shadow: none;
+//}
+//.jstree-checkbox-no-clicked .jstree-clicked.jstree-hovered {
+//    background: #e7f4f9;
+//}
+//.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked {
+//    background: transparent;
+//}
+//.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked.jstree-wholerow-hovered {
+//    background: #e7f4f9;
+//}
+//.jstree-checkbox {
+//    background-position: -164px -4px;
+//}
+//.jstree-checkbox:hover {
+//    background-position: -164px -36px;
+//}
+//.jstree-clicked > .jstree-checkbox {
+//    background-position: -228px -4px;
+//}
+//.jstree-clicked > .jstree-checkbox:hover {
+//    background-position: -228px -36px;
+//}
+//.jstree-anchor > .jstree-undetermined {
+//    background-position: -196px -4px;
+//}
+//.jstree-anchor > .jstree-undetermined:hover {
+//    background-position: -196px -36px;
+//}
+//.jstree-striped {
+//    background-size: auto 48px;
+//}
+//.jstree-no-icons .jstree-anchor > .jstree-themeicon {
+//    display: none;
+//}
+//.jstree-node,
+//.jstree-icon {
+//    background-repeat: no-repeat;
+//    background-color: transparent;
+//}
+//.jstree-wholerow-ul .jstree-hovered,
+//.jstree-wholerow-ul .jstree-clicked {
+//    background: transparent;
+//    box-shadow: none;
+//    border-radius: 0;
+//}
+//.jstree-wholerow {
+//    box-sizing: border-box;
+//}
+//.jstree-wholerow-hovered {
+//    background: #e7f4f9;
+//}
+//.jstree-wholerow-clicked {
+//    background: #beebff;
+//    background: -moz-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
+//    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #beebff), color-stop(100%, #a8e4ff));
+//    background: -webkit-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
+//    background: -o-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
+//    background: -ms-linear-gradient(top, #beebff 0%, #a8e4ff 100%);
+//    background: linear-gradient(to bottom, #beebff 0%, #a8e4ff 100%);
+//}
+//.jstree-wholerow {
+//    height: 2em;
+//}
+//.jstree-wholerow-ul {
+//    position: relative;
+//    display: inline-block;
+//    min-width: 100%;
+//}
+//.jstree-wholerow-ul .jstree-leaf > .jstree-ocl {
+//    cursor: pointer;
+//}
+//.jstree-wholerow-ul .jstree-anchor,
+//.jstree-wholerow-ul .jstree-icon {
+//    position: relative;
+//}
+//.jstree-wholerow-ul .jstree-wholerow {
+//    width: 100%;
+//    cursor: pointer;
+//    position: absolute;
+//    left: 0;
+//    user-select: none;
+//}
+//#jstree-marker {
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    margin: 0;
+//    padding: 0;
+//    border-right: 0;
+//    border-top: 5px solid transparent;
+//    border-bottom: 5px solid transparent;
+//    border-left: 5px solid;
+//    width: 0;
+//    height: 0;
+//    font-size: 0;
+//    line-height: 0;
+//}
+//.jstree-no-icons .jstree-themeicon,
+//.jstree-anchor > .jstree-themeicon-hidden {
+//    display: none;
+//}
 //.jstree-rtl .jstree-node {
 //    margin-right: 24px;
 //}
