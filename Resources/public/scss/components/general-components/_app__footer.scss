@@ -6,3 +6,11 @@
     padding-top: 1em;
     padding-bottom: 1em;
 }
+
+.app__footer__kunstmaan-link {
+    opacity: .3;
+    @include transition(opacity .3s ease);
+    &:hover {
+        opacity: 1;
+    }
+}
