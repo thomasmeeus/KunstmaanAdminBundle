@@ -1,8 +1,7 @@
 /* ==========================================================================
-   Helpers
-
-   Never add styles directly to this file - set up imports
+   App
    ========================================================================== */
 
-@import "placeholders/placeholders";
-@import "mixins/mixins";
+.app {
+    background: $blue-ultralight;
+}

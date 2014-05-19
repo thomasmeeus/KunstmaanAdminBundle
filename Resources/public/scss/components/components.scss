@@ -4,17 +4,18 @@
    Never add styles directly to this file - set up imports
    ========================================================================== */
 
-
-/* Bootstrap components
+/* Vendors
    ========================================================================== */
-@import "bootstrap-components/grid",
-        "bootstrap-components/pagination",
-        "bootstrap-components/page-header";
+// General
+@import "vendors/jstree";
 
+// Bootstrap
+@import "vendors/bootstrap-components/grid",
+        "vendors/bootstrap-components/pagination",
+        "vendors/bootstrap-components/page-header";
 
-/* Cupcake components
-   ========================================================================== */
-@import "cupcake-components/navigation";
+// Cupcake
+@import "vendors/cupcake-components/navigation";
 
 
 /* Typography
@@ -29,5 +30,9 @@
 
 /* General components
    ========================================================================== */
-@import "general-components/main-scaffolding",
-        "general-components/jstree";
+@import "general-components/app",
+        "general-components/app__header",
+        "general-components/app__main",
+        "general-components/app__footer",
+        "general-components/app__sidebar",
+        "general-components/app__content";

@@ -1,18 +1,18 @@
 <!-- Tree Search -->
-<div class="form-group app__sidebar__search">
+<div class="form-group app__sidebar__module app__sidebar__search">
     <div class="input-group">
         <span class="input-group-addon">
             <i class="fa fa--search"></i>
         </span>
         <input type="text" placeholder="{{ 'Search' | trans }}" id="app__sidebar__search" class="form-control">
     </div>
-</div>
 
-<hr>
+    <hr>
+</div>
 
 <!-- Tree -->
 {% set currentMenuItem = adminmenu.current %}
-<nav role="navigation" id="app__sidebar__navigation" class="app__sidebar__navigation">
+<nav role="navigation" id="app__sidebar__navigation" class="app__sidebar__module app__sidebar__navigation">
     <ul>
         {% if lowestTopChild.appearInSidebar %}
             <li class="jstree-open" {% if lowestTopChild.role %}rel="{{lowestTopChild.role}}"{% endif %}>
