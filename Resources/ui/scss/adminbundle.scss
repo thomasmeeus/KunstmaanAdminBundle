@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Adminbundle Styles
+
+   Never add styles directly to this file - set up imports
+   ========================================================================== */
+
+/* Vendors
+   ========================================================================== */
+// General
+@import "vendors/jstree";
+
+// Bootstrap
+@import "vendors/bootstrap-components/grid",
+        "vendors/bootstrap-components/pagination",
+        "vendors/bootstrap-components/page-header";
+
+// Cupcake
+@import "vendors/cupcake-components/navigation";
+
+
+/* Typography
+   ========================================================================== */
+@import "typography/headers",
+        "typography/text",
+        "typography/links",
+        "typography/buttons",
+        "typography/lists",
+        "typography/iconfont";
+
+
+/* General App styles
+   ========================================================================== */
+@import "app/app",
+        "app/app__header",
+        "app/app__main",
+        "app/app__footer",
+        "app/app__sidebar",
+        "app/app__content";
