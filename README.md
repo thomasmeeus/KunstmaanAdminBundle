@@ -6,7 +6,7 @@
 [![Analytics](https://ga-beacon.appspot.com/UA-3160735-7/Kunstmaan/KunstmaanAdminBundle)](https://github.com/igrigorik/ga-beacon)
 ddfdfdf
 
-The Kunstmaan Admin bundle supplies your project with a basic, elegant backend interface you can modify and extend so you can make your perfect admin module. The clean interface makes it straightforward for you and the people working with it to change settings and modify content. View screenshots and more information [http://bundles.kunstmaan.be](http://bundles.kunstmaan.be).
+The Kunstmaan Admin bundle supplies your project with a basic, elegant backend interface you can modify and extend so you can make your perfect admin module. The clean interface makes it straightforward for you and the people working with it to change settings and modify content. View screenshots adddnd more information [http://bundles.kunstmaan.be](http://bundles.kunstmaan.be).
 
 ## Installation
 
