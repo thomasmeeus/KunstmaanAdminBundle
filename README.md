@@ -9,5 +9,5 @@ ddfdfdf
 The Kunstmaan Admin bundle supplies your project with a basic, elegant backend interface you can modify and extend so you can make your perfect admin module. The clean interface makes it straightforward for you and the people working with it to change settings and modify content. View screenshots adddnd more information [http://bundles.kunstmaan.be](http://bundles.kunstmaan.be).
 
 ## Installation
-
+xcwxc
 This bundle is compatible with all Symfony 2.3.* releasdfdfes. More information about installing can be found in this line by line walkthrough of installing Symfony and adll our bundles, please refer to the [Getting Started guide](http://bundles.kunstmaan.be/getting-started/installation) and enjoy the full blown experience.
